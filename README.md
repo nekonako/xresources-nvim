@@ -20,16 +20,22 @@ or
 !['xresources color by Fikri Omar'](./shot-2.png)
 !['xresources color by me'](./shot-1.png)
 
-### useful function
+### Useful function
    ```lua
-local function get_xresources_color (c)
-   local command = io.popen('xrdb -query | grep ' .. c .. ' -m 1 | cut -f 2')
-   local color = command:read("*l")
-   return color
-end
-   ```
+local color = require('xresources').get_color()
+   -- properties
+   -- red
+   -- green
+   -- yellow
+   -- blue
+   -- purple
+   -- cyam
+   -- grey
 
-this function get color for xresources, can be use to your plugin
+
+   -- example
+local grey_color = color.grey
+   ```
 
 ### Thanks
 - [Glepnir](https://github.com/glepnir)
