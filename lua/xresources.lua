@@ -27,12 +27,22 @@ end
 local xresources = {
    fg = get_xresources_color('foreground');
    bg = get_xresources_color('background');
+   black = get_xresources_color('color0');
    red = get_xresources_color('color1');
    green = get_xresources_color('color2');
    yellow =get_xresources_color('color3');
    blue = get_xresources_color('color4');
    purple = get_xresources_color('color5'),
    cyan = get_xresources_color('color6');
+   white = get_xresources_color('color7');
+   light_black = get_xresources_color('color8');
+   light_red = get_xresources_color('color9');
+   light_green = get_xresources_color('color10');
+   light_yellow = get_xresources_color('color11');
+   light_blue = get_xresources_color('color12');
+   light_purple = get_xresources_color('color13');
+   ligt_cyan = get_xresources_color('color14');
+   light_white = get_xresources_color('color15');
    grey = get_lighter_color('background', 0xf0f10);
    grey1 = get_lighter_color('background', 0x363940);
    none = 'NONE';
@@ -46,8 +56,8 @@ function xresources.terminal_color()
    vim.g.terminal_color_4 = xresources.blue
    vim.g.terminal_color_5 = xresources.purple
    vim.g.terminal_color_6 = xresources.cyan
-   vim.g.terminal_color_7 = xresources.bg
-   vim.g.terminal_color_8 = xresources.fg
+   vim.g.terminal_color_7 = xresources.fg
+   vim.g.terminal_color_8 = xresources.bg
    vim.g.terminal_color_9 = xresources.red
    vim.g.terminal_color_10 = xresources.green
    vim.g.terminal_color_11 = xresources.yellow
@@ -275,10 +285,6 @@ async_load_plugin = vim.loop.new_async(vim.schedule_wrap(function ()
    end
    async_load_plugin:close()
 end))
-
-function xresources.get_color()
-   return xresources
-end
 
 function xresources.colorscheme()
    vim.api.nvim_command('hi clear')

@@ -6,42 +6,74 @@ Neovim colorscheme based on your xresources color
 - xrdb
 
 ### Install
-***Vim plug***
-```
-Plug 'nekonako/xresorces-nvim'
+**Vim Plug**
+```vim
+Plug 'nekonako/xresources-nvim'
 ```
 
 ### Usage
 `lua require('xresources')`
+
 or
-`colorscheme xresorces`
+
+`colorscheme xresources`
 
 ### Preview
+
+<center>
 !['Previw'](./shot.png)
+</center>
 
-### Useful function
-   ```lua
-local color = require('xresources').get_color()
-   
-   -- properties
-   -- fg
-   -- bg
-   -- red
-   -- green
-   -- yellow
-   -- blue
-   -- purple
-   -- cyam
-   -- grey
+### Properties
 
-   -- example
-local grey_color = color.grey
-   ```
+| Properties   | Xresources             |
+| :----------: | :--------------------: |
+| fg           | foreground             |
+| bg           | background             |
+| black        | color0                 |
+| red          | color1                 |
+| green        | color2                 |
+| yellow       | color3                 |
+| blue         | color4                 |
+| purple       | color5                 |
+| cyan         | color6                 |
+| white        | color7                 |
+| light_black  | color8                 |
+| light_red    | color9                 |
+| light_green  | color10                |
+| light_yellow | color11                |
+| light_blue   | color12                |
+| light_purple | color13                |
+| light_cyan   | color14                |
+| light_white  | color15                |
+| grey         | background + 0xf0f10   |
+| grey1        | background + 0x363940  |
+| none         | NONE                   |
+|---------------------------------------|
+
+### Example using properties
+Let say i want using **xresources-nvim* to my [galaxyline](https://github.com/glepnir/galaxyline.nvim) 
+configuration 
+```lua
+local galaxyline = require('galaxyline')
+local color = require('xresources')
+local section = galaxyline.section
+
+section.left[1] = {
+   FileName = {
+      provider = get_current_file_name,
+      condition = buffer_not_empty,
+      -- acessing properties --
+      highlight = {color.bg, color.purple},
+      separator = " ",
+      -- acessing properties --
+      separator_highlight = {color.gray, color.gray}
+   }
+}
+```
 
 ### Thanks
-- [Glepnir](https://github.com/glepnir)
-- [Elianiva](https://github.com/elianiva)
-- [Fikri Omar](https://github.com/fikriomar16)
+- [Glepnir](https://github.com/glepnir) - For colorscheme boilerplate
 - [Dotfiles indonesia](https://t.me/dotfiles_id)
 - [Vim indonesia](https://t.me/VimID)
 
