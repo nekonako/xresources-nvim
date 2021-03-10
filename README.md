@@ -17,13 +17,15 @@ or
 `colorscheme xresorces`
 
 ### Preview
-!['xresources color by Fikri Omar'](./shot-2.png)
-!['xresources color by me'](./shot-1.png)
+!['Previw'](./shot.png)
 
 ### Useful function
    ```lua
 local color = require('xresources').get_color()
+   
    -- properties
+   -- fg
+   -- bg
    -- red
    -- green
    -- yellow
@@ -31,7 +33,6 @@ local color = require('xresources').get_color()
    -- purple
    -- cyam
    -- grey
-
 
    -- example
 local grey_color = color.grey

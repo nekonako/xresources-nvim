@@ -276,6 +276,10 @@ async_load_plugin = vim.loop.new_async(vim.schedule_wrap(function ()
    async_load_plugin:close()
 end))
 
+function xresources.get_color()
+   return xresources
+end
+
 function xresources.colorscheme()
    vim.api.nvim_command('hi clear')
    if vim.fn.exists('syntax_on') then
