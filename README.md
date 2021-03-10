@@ -21,7 +21,7 @@ or
 !['xresources color by me']('./shot-1.png')
 
 ### useful function
-   ```
+   ```lua
 local function get_xresources_color (c)
    local command = io.popen('xrdb -query | grep ' .. c .. ' -m 1 | cut -f 2')
    local color = command:read("*l")
@@ -32,7 +32,7 @@ end
 this function get color for xresources, can be use to your plugin
 
 ### Thanks
-- [Glapnir]('https//github.com/glapnir')
+- [Glepnir]('https://github.com/glepnir')
 - [elianiva]('https://github.com/elianiva')
 - [Fikri Omar]('https://github.com/fikriomar16')
 - [Dotfiles indonesia]('https://t.me/dotfiles_id')
