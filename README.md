@@ -26,7 +26,7 @@ or
 
 ### Properties
 
-| Properties   | Xresources             |
+| **Properties** | **Xresources**         |
 | :----------: | :--------------------: |
 | fg           | foreground             |
 | bg           | background             |
@@ -49,9 +49,10 @@ or
 | grey         | background + 0xf0f10   |
 | grey1        | background + 0x363940  |
 | none         | NONE                   |
-|---------------------------------------|
+|--------------|------------------------|
 
 ### Example using properties
+
 Let say i want using **xresources-nvim* to my [galaxyline](https://github.com/glepnir/galaxyline.nvim) 
 configuration 
 ```lua
