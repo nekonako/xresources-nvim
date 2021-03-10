@@ -33,7 +33,7 @@ this function get color for xresources, can be use to your plugin
 
 ### Thanks
 - [Glepnir](https://github.com/glepnir)
-- [elianiva](https://github.com/elianiva)
+- [Elianiva](https://github.com/elianiva)
 - [Fikri Omar](https://github.com/fikriomar16)
 - [Dotfiles indonesia](https://t.me/dotfiles_id)
 - [Vim indonesia](https://t.me/VimID)
