@@ -14,11 +14,11 @@ Plug 'nekonako/xresorces-nvim'
 ### Usage
 `lua require('xresources')`
 or
-colorscheme xresorces
+`colorscheme xresorces`
 
 ### Preview
-!['xresources color by Fikri Omar']('shot-2.png')
-!['xresources color by me']('shot-1.png')
+!['xresources color by Fikri Omar']('./shot-2.png')
+!['xresources color by me']('./shot-1.png')
 
 ### useful function
    ```
