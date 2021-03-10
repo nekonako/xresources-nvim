@@ -1,12 +1,17 @@
+-- ========================================
+-- Function to get colors from xresources
+-- ========================================
 local function get_xresources_color (c)
    local command = io.popen('xrdb -query | grep ' .. c .. ' -m 1 | cut -f 2')
    local color = command:read("*l")
    return color
 end
 
+-- ======================================
+-- funtion to get lighter color
+-- ======================================
 local function get_lighter_color(c, hex)
-   local command = io.popen("xrdb -query | grep " .. c .. " -m 1 | cut -f 2")
-   local before_color = command:read("*l")
+   local before_color = get_xresources_color(c)
    local t = tostring(before_color)
    local s = string.sub(t, 2, 7)
    local after_color = tonumber('0x' .. s) + hex
@@ -14,6 +19,9 @@ local function get_lighter_color(c, hex)
    return final_color
 end
 
+-- ======================================
+-- funtion to get darker color
+-- ======================================
 local function get_darker_color(c, hex)
    local command = io.popen("xrdb -query | grep " .. c .. " -m 1 | cut -f 2")
    local before_color = command:read("*l")
@@ -24,6 +32,9 @@ local function get_darker_color(c, hex)
    return final_color
 end
 
+-- =================
+-- Color properties
+-- =================
 local xresources = {
    fg = get_xresources_color('foreground');
    bg = get_xresources_color('background');
@@ -48,6 +59,9 @@ local xresources = {
    none = 'NONE';
 }
 
+-- ======================
+-- Terminal colors
+-- ======================
 function xresources.terminal_color()
    vim.g.terminal_color_0 = xresources.bg
    vim.g.terminal_color_1 = xresources.red
@@ -67,6 +81,9 @@ function xresources.terminal_color()
    vim.g.terminal_color_15 = xresources.fg
 end
 
+-- ====================
+-- Highlight function
+-- ====================
 function xresources.highlight(group, color)
    local style = color.style and 'gui=' .. color.style or 'gui=NONE'
    local fg = color.fg and 'guifg=' .. color.fg or 'guifg=NONE'
@@ -76,115 +93,224 @@ function xresources.highlight(group, color)
       ' ' .. bg..' '..sp)
 end
 
-
 function xresources.load_syntax()
    local syntax = {
-      Normal = {fg = xresources.fg,bg=xresources.bg};
-      Terminal = {fg = xresources.fg,bg=xresources.bg};
-      SignColumn = {fg=xresources.fg,bg=xresources.bg};
-      FoldColumn = {fg=xresources.fg,bg=xresources.bg};
-      VertSplit = {fg=xresources.grey,bg=xresources.grey};
-      Folded = {fg=xresources.grey,bg=xresources.grey};
-      EndOfBuffer = {fg=xresources.bg,bg=xresources.none};
-      IncSearch = {fg=xresources.gray,bg=xresources.yellow,style=xresources.none};
-      Search = {fg=xresources.bg,bg=xresources.yellow};
+
+      -- ==================
+      -- Syntax group
+      -- ===================
+      Boolean = {fg=xresources.yellow};
+      Comment = {fg=xresources.grey1};
+      Constant = {fg=xresources.cyan};
+      Character = {fg=xresources.green};
+      Conditional = {fg=xresources.purple};
+      Debug = {};
+      Define = {fg=xresources.purple};
+      Delimiter = {};
+      Error = {fg=xresources.red};
+      Exception = {fg=xresources.purple};
+      Float = {fg=xresources.yellow};
+      Function = {fg=xresources.blue};
+      Identifier = {fg=xresources.red};
+      Ignore = {};
+      Include = {fg=xresources.blue};
+      Keyword = {fg=xresources.red};
+      Label = {fg=xresources.purple};
+      Macro = {fg=xresources.purple};
+      Number = {fg=xresources.yellow};
+      Operator = {fg=xresources.purple};
+      PreProc = {fg=xresources.yellow};
+      PreCondit = {fg=xresources.yellow};
+      Repeat = {fg=xresources.purple};
+      Statement = {fg=xresources.purple};
+      StorageClass = {fg=xresources.yellow};
+      Special = {fg=xresources.blue};
+      SpecialChar = {fg=xresources.yellow};
+      Structure = {fg=xresources.yellow};
+      String = {fg=xresources.green};
+      SpecialComment = {fg=xresources.grey1};
+      Typedef = {fg=xresources.yellow};
+      Tag = {};
+      Type = {fg=xresources.yellow};
+      Todo = {fg=xresources.purple};
+      Underlined = {fg=xresources.none,style='underline'};
+
+      -- ===================
+      -- Highlight Group
+      -- ===================
+      BufferInactive= { fg=xresources.fg,bg=xresources.grey };
+      BufferInactiveTarge = { fg=xresources.fg, bg=xresources.grey };
+      BufferInactiveSign = { fg=xresources.blue, bg=xresources.grey };
+      BufferCurrent = { fg=xresources.yellow, bg=xresources.bg, style ='bold'};
+      BufferCurrentSign = { fg=xresources.blue, bg=xresources.bg };
+      BufferTabPageFill = { fg=xresources.blue, bg=xresources.bg };
+      BufferCurrentMod = { fg=xresources.blue, bg=xresources.bg };
+      BufferInactiveMod = { fg=xresources.blue, bg=xresources.grey };
       ColorColumn = {fg=xresources.none,bg=xresources.grey};
       Conceal = {fg=xresources.grey,bg=xresources.none};
-      Cursor = {fg=xresources.none,bg=xresources.none,style='reverse'};
-      vCursor = {fg=xresources.none,bg=xresources.none,style='reverse'};
-      iCursor = {fg=xresources.none,bg=xresources.none,style='reverse'};
-      lCursor = {fg=xresources.none,bg=xresources.none,style='reverse'};
+      CursorLineNr = {fg=xresources.blue};
       CursorIM = {fg=xresources.none,bg=xresources.none,style='reverse'};
       CursorColumn = {fg=xresources.none,bg=xresources.grey};
       CursorLine = {fg=xresources.none,bg=xresources.grey};
-      LineNr = {fg=xresources.grey1};
-      CursorLineNr = {fg=xresources.blue};
+      Cursor = {fg=xresources.none,bg=xresources.none,style='reverse'};
       DiffAdd = {fg=xresources.bg,bg=xresources.green};
       DiffChange = {fg=xresources.bg,bg=xresources.yellow};
       DiffDelete = {fg=xresources.bg,bg=xresources.red};
       DiffText = {fg=xresources.bg,bg=xresources.fg};
       Directory = {fg=xresources.gray,bg=xresources.none};
+      debugBreakpoint = {fg=xresources.bg,bg=xresources.red};
+      EndOfBuffer = {fg=xresources.bg,bg=xresources.none};
       ErrorMsg = {fg=xresources.red,bg=xresources.none,style='bold'};
-      WarningMsg = {fg=xresources.yellow,bg=xresources.none,style='bold'};
+      FoldColumn = {fg=xresources.fg,bg=xresources.bg};
+      Folded = {fg=xresources.grey,bg=xresources.grey};
+      iCursor = {fg=xresources.none,bg=xresources.none,style='reverse'};
+      IncSearch = {fg=xresources.gray,bg=xresources.yellow,style=xresources.none};
+      lCursor = {fg=xresources.none,bg=xresources.none,style='reverse'};
+      LineNr = {fg=xresources.grey1};
       ModeMsg = {fg=xresources.fg,bg=xresources.none,style='bold'};
       MatchParen = {fg=xresources.red,bg=xresources.none};
+      Normal = {fg = xresources.fg,bg=xresources.bg};
+      NormalFloat = {fg=xresources.grey,bg=xresources.grey};
       NonText = {fg=xresources.gray};
-      Whitespace = {fg=xresources.grey};
-      SpecialKey = {fg=xresources.gray};
       Pmenu = {fg=xresources.fg,bg=xresources.grey};
       PmenuSel = {fg=xresources.grey,bg=xresources.blue};
       PmenuSelBold = {fg=xresources.grey,g=xresources.blue};
       PmenuSbar = {fg=xresources.none,bg=xresources.grey};
       PmenuThumb = {fg=xresources.purple,bg=xresources.green};
-      WildMenu = {fg=xresources.fg,bg=xresources.green};
       Question = {fg=xresources.yellow};
-      NormalFloat = {fg=xresources.grey,bg=xresources.grey};
-      TabLineFill = {style=xresources.none};
-      TabLineSel = {bg=xresources.bg};
+      QuickFixLine = {fg=xresources.purple,style='bold'};
       StatusLine = {fg=xresources.grey,bg=xresources.grey,style=xresources.none};
       StatusLineNC = {fg=xresources.grey,bg=xresources.grey,style=xresources.none};
       SpellBad = {fg=xresources.red,bg=xresources.none,style='undercurl'};
       SpellCap = {fg=xresources.blue,bg=xresources.none,style='undercurl'};
       SpellLocal = {fg=xresources.cyan,bg=xresources.none,style='undercurl'};
       SpellRare = {fg=xresources.purple,bg=xresources.none,style = 'undercurl'};
+      SignColumn = {fg=xresources.fg,bg=xresources.bg};
+      Search = {fg=xresources.bg,bg=xresources.yellow};
+      SpecialKey = {fg=xresources.gray};
+      TabLineSel = {bg=xresources.bg};
+      Title = {fg=xresources.green,style='bold'};
+      Terminal = {fg = xresources.fg,bg=xresources.bg};
+      TabLineFill = {style=xresources.none};
+      VertSplit = {fg=xresources.grey,bg=xresources.grey};
+      vCursor = {fg=xresources.none,bg=xresources.none,style='reverse'};
+      WarningMsg = {fg=xresources.yellow,bg=xresources.none,style='bold'};
+      Whitespace = {fg=xresources.grey};
+      WildMenu = {fg=xresources.fg,bg=xresources.green};
       Visual = {fg=xresources.bg,bg=xresources.fg};
       VisualNOS = {fg=xresources.bg,bg=xresources.fg};
-      QuickFixLine = {fg=xresources.purple,style='bold'};
-      Debug = {fg=xresources.yellow};
-      debugBreakpoint = {fg=xresources.bg,bg=xresources.red};
-
-      Boolean = {fg=xresources.yellow};
-      Number = {fg=xresources.red};
-      Float = {fg=xresources.red};
-      PreProc = {fg=xresources.purple};
-      PreCondit = {fg=xresources.purple};
-      Include = {fg=xresources.purple};
-      Define = {fg=xresources.purple};
-      Conditional = {fg=xresources.purple};
-      Repeat = {fg=xresources.purple};
-      Keyword = {fg=xresources.green};
-      Typedef = {fg=xresources.red};
-      Exception = {fg=xresources.red};
-      Statement = {fg=xresources.red};
-      Error = {fg=xresources.red};
-      StorageClass = {fg=xresources.yellow};
-      Tag = {fg=xresources.yellow};
-      Label = {fg=xresources.yellow};
-      Structure = {fg=xresources.yellow};
-      Operator = {fg=xresources.purple};
-      Title = {fg=xresources.yellow,style='bold'};
-      Special = {fg=xresources.yellow};
-      SpecialChar = {fg=xresources.yellow};
-      Type = {fg=xresources.yellow};
-      Function = {fg=xresources.yellow};
-      String = {fg=xresources.green};
-      Character = {fg=xresources.green};
-      Constant = {fg=xresources.cyan};
-      Macro = {fg=xresources.cyan};
-      Identifier = {fg=xresources.blue};
-
-      Comment = {fg=xresources.grey1};
-      SpecialComment = {fg=xresources.grey};
-      Todo = {fg=xresources.purple};
-      Delimiter = {fg=xresources.fg};
-      Ignore = {fg=xresources.grey};
-      Underlined = {fg=xresources.none,style='underline'};
-
-      BufferInactive= { fg=xresources.fg,bg=xresources.grey };
-      BufferInactiveTarge = { fg=xresources.fg, bg=xresources.grey };
-      BufferInactiveSign = { fg=xresources.blue, bg=xresources.grey };
-      BufferCurrent = { fg=xresources.blue, bg=xresources.bg };
-      BufferCurrentSign = { fg=xresources.blue, bg=xresources.bg };
-      BufferTabPageFill = { fg=xresources.blue, bg=xresources.grey };
-      BufferCurrentMod = { fg=xresources.blue, bg=xresources.bg };
-      BufferInactiveMod = { fg=xresources.blue, bg=xresources.grey };
-
    }
    return syntax
 end
 
+-- ================================
+-- Language specific highlighting
+-- ================================
 function xresources.load_plugin_syntax()
    local plugin_syntax = {
+
+      -- ================
+      -- CSS
+      -- ================
+      cssAttrComma= {fg=xresources.purple};
+      cssAttributeSelector= {fg=xresources.green};
+      cssBraces= {fg=xresources.white};
+      cssClassName= {fg=xresources.yellow};
+      cssClassNameDot= {fg=xresources.yellow};
+      cssDefinition= {fg=xresources.purple};
+      cssFontAttr= {fg=xresources.yellow};
+      cssFontDescriptor= {fg=xresources.purple};
+      cssFunctionName= {fg=xresources.blue};
+      cssIdentifier= {fg=xresources.blue};
+      cssImportant= {fg=xresources.purple};
+      cssInclude= {fg=xresources.white};
+      cssIncludeKeyword= {fg=xresources.purple};
+      cssMediaType= {fg=xresources.yellow};
+      cssProp= {fg=xresources.white};
+      cssPseudoClassId= {fg=xresources.yellow};
+      cssSelectorOp= {fg=xresources.purple};
+      cssSelectorOp2= {fg=xresources.purple};
+      cssTagName= {fg=xresources.red};
+
+      -- ================
+      -- GO
+      -- =================
+      goDeclaration= {fg=xresources.purple};
+      goBuiltins= {fg=xresources.cyan};
+      goFunctionCall= {fg=xresources.blue};
+      goVarDefs= {fg=xresources.red};
+      goVarAssign= {fg=xresources.red};
+      goVar= {fg=xresources.purple};
+      goConst= {fg=xresources.purple};
+      goType= {fg=xresources.yellow};
+      goTypeName= {fg=xresources.yellow};
+      goDeclType= {fg=xresources.cyan};
+      goTypeDecl= {fg=xresources.purple};
+
+      -- ==============
+      -- JavaScript
+      -- ==============
+      javaScriptBraces={fg = xresources.white };
+      javaScriptFunction ={ fg =xresources.purple };
+      javaScriptIdentifier = { fg = xresources.purple };
+      javaScriptNull = { fg = xresources.yellow };
+      javaScriptNumber ={ fg = xresources.yellow };
+      javaScriptRequire ={ fg =xresources.cyan };
+      javaScriptReserved = { fg = xresources.purple };
+      -- ==============================================
+      -- https://github.com/pangloss/vim-javascript
+      -- ==============================================
+      jsArrowFunction = { fg = xresources.purple };
+      jsClassKeyword ={ fg = xresources.purple };
+      jsClassMethodType = { fg = xresources.purple };
+      jsDocParam = { fg = xresources.blue };
+      jsDocTags ={ fg = xresources.purple };
+      jsExport ={ fg = xresources.purple };
+      jsExportDefault ={ fg = xresources.purple };
+      jsExtendsKeyword = { fg = xresources.purple };
+      jsFrom = { fg = xresources.purple };
+      jsFuncCall = { fg = xresources.blue };
+      jsFunction ={ fg = xresources.purple };
+      jsGenerator = { ffg = xresources.yellow };
+      jsGlobalObjects = { fg = xresources.yellow };
+      jsImport ={ fg = xresources.purple };
+      jsModuleAs = { fg = xresources.purple };
+      jsModuleWords = { fg = xresources.purple };
+      jsModules ={ fg = xresources.purple };
+      jsNull ={ fg = xresources.yellow };
+      jsOperator = { fg = xresources.purple };
+      jsStorageClass = { fg = xresources.purple };
+      jsSuper = { fg = xresources.red };
+      jsTemplateBraces = { fg = xresources.red };
+      jsTemplateVar ={ fg = xresources.green };
+      jsThis = { fg = xresources.red };
+      jsUndefined = { fg = xresources.yellow };
+      -- =====================================
+      --  https://github.com/othree/yajs.vim
+      --  =======================================
+      javascriptArrowFunc ={ fg = xresources.purple };
+      javascriptClassExtends = { fg = xresources.purple };
+      javascriptClassKeyword ={ fg = xresources.purple };
+      javascriptDocNotation ={ fg = xresources.purple };
+      javascriptDocParamName = { fg = xresources.blue };
+      javascriptDocTags ={ fg = xresources.purple };
+      javascriptEndColons = { fg = xresources.white };
+      javascriptExport ={ fg = xresources.purple };
+      javascriptFuncArg ={ fg = xresources.white };
+      javascriptFuncKeyword ={ fg = xresources.purple };
+      javascriptIdentifier ={ fg = xresources.red };
+      javascriptImport ={ fg = xresources.purple };
+      javascriptMethodName ={ fg =xresources.white };
+      javascriptObjectLabel = { fg =xresources.white };
+      javascriptOpSymbol= { fg =xresources.cyan};
+      javascriptOpSymbols ={ fg = xresources.syan };
+      javascriptPropertyName = { fg = xresources.green };
+      javascriptTemplateSB = { fg = xresources.red };
+      javascriptVariable ={ fg = xresources.purple };
+
+      -- =============
+      -- TypeScript
+      -- ==============
       TSFunction = {fg=xresources.cyan};
       TSMethod = {fg=xresources.cyan};
       TSKeywordFunction = {fg=xresources.red};
@@ -192,16 +318,22 @@ function xresources.load_plugin_syntax()
       TSType = {fg=xresources.cyan};
       TSPunctcyan = {fg=xresources.cyan};
 
-      vimCommentTitle = {fg=xresources.grey,style='bold'};
+      -- ============
+      -- Vim
+      -- ============
+      vimCommentTitle = {fg=xresources.grey};
       vimLet = {fg=xresources.yellow};
       vimVar = {fg=xresources.cyan};
       vimFunction = {fg=xresources.purple};
       vimIsCommand = {fg=xresources.fg};
       vimCommand = {fg=xresources.blue};
-      vimNotFunc = {fg=xresources.purple,style='bold'};
-      vimUserFunc = {fg=xresources.yellow,style='bold'};
-      vimFuncName= {fg=xresources.yellow,style='bold'};
+      vimNotFunc = {fg=xresources.purple};
+      vimUserFunc = {fg=xresources.yellow};
+      vimFuncName= {fg=xresources.yellow};
 
+      -- ========
+      -- Diff
+      -- ========
       diffAdded = {fg = xresources.green};
       diffRemoved = {fg =xresources.red};
       diffChanged = {fg = xresources.blue};
@@ -231,6 +363,9 @@ function xresources.load_plugin_syntax()
       VistaIcon = {fg=xresources.yellow};
       VistaLineNr = {fg=xresources.fg};
 
+      -- ===================
+      -- Vim GitGutter
+      -- ==================
       GitGutterAdd = {fg=xresources.green};
       GitGutterChange = {fg=xresources.blue};
       GitGutterDelete = {fg=xresources.red};
@@ -247,16 +382,17 @@ function xresources.load_plugin_syntax()
       DashboardCenter = {fg=xresources.blue};
       DashboardFooter = {fg=xresources.grey};
 
+      -- =========================
+      -- Neovim LSP
+      -- =========================
       LspDiagnosticsSignError = {fg=xresources.red};
       LspDiagnosticsSignWarning = {fg=xresources.yellow};
       LspDiagnosticsSignInformation = {fg=xresources.blue};
       LspDiagnosticsSignHint = {fg=xresources.cyan};
-
       LspDiagnosticsVirtualTextError = {fg=xresources.red};
       LspDiagnosticsVirtualTextWarning= {fg=xresources.yellow};
       LspDiagnosticsVirtualTextInformation = {fg=xresources.blue};
       LspDiagnosticsVirtualTextHint = {fg=xresources.cyan};
-
       LspDiagnosticsUnderlineError = {style="undercurl",sp=xresources.red};
       LspDiagnosticsUnderlineWarning = {style="undercurl",sp=xresources.yellow};
       LspDiagnosticsUnderlineInformation = {style="undercurl",sp=xresources.blue};
@@ -265,10 +401,16 @@ function xresources.load_plugin_syntax()
       CursorWord0 = {bg=xresources.gray};
       CursorWord1 = {bg=xresources.gray};
 
+      -- ==================
+      -- Nvim Tree
+      -- ==================
       NvimTreeFolderName = {fg=xresources.cyan};
       NvimTreeRootFolder = {fg=xresources.red};
       NvimTreeSpecialFile = {fg=xresources.fg,bg=xresources.none,stryle='NONE'};
 
+      -- ==================
+      -- Telescope Nvim
+      -- ==================
       TelescopeBorder = {fg=xresources.cyan};
       TelescopePromptBorder = {fg=xresources.blue}
    }
