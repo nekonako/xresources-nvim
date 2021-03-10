@@ -76,6 +76,7 @@ section.left[1] = {
 
 ### Thanks
 - [Glepnir](https://github.com/glepnir) - For colorscheme boilerplate
+- [Elianiva](https://github.com/elianiva)
 - [Dotfiles indonesia](https://t.me/dotfiles_id)
 - [Vim indonesia](https://t.me/VimID)
 
