@@ -17,8 +17,8 @@ or
 `colorscheme xresorces`
 
 ### Preview
-!['xresources color by Fikri Omar']('./shot-2.png')
-!['xresources color by me']('./shot-1.png')
+!['xresources color by Fikri Omar'](./shot-2.png)
+!['xresources color by me'](./shot-1.png)
 
 ### useful function
    ```lua
@@ -32,10 +32,10 @@ end
 this function get color for xresources, can be use to your plugin
 
 ### Thanks
-- [Glepnir]('https://github.com/glepnir')
-- [elianiva]('https://github.com/elianiva')
-- [Fikri Omar]('https://github.com/fikriomar16')
-- [Dotfiles indonesia]('https://t.me/dotfiles_id')
-- [Vim indonesia]('https://t.me/VimID')
+- [Glepnir](https://github.com/glepnir)
+- [elianiva](https://github.com/elianiva)
+- [Fikri Omar](https://github.com/fikriomar16)
+- [Dotfiles indonesia](https://t.me/dotfiles_id)
+- [Vim indonesia](https://t.me/VimID)
 
 
