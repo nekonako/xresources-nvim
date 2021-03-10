@@ -74,6 +74,12 @@ section.left[1] = {
 }
 ```
 
+### Tips
+- use [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better highlight
+
+### Similiar project
+- [wal.vim](https://github.com/dylanaraps/wal.vim)
+
 ### Thanks
 - [Glepnir](https://github.com/glepnir) - For colorscheme boilerplate
 - [Elianiva](https://github.com/elianiva)
