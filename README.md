@@ -21,7 +21,9 @@ or
 ### Preview
 
 <center>
-!['Previw'](./shot.png)
+
+!['Preview'](./shot.png)
+
 </center>
 
 ### Properties
