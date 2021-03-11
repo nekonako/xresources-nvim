@@ -140,7 +140,7 @@ function xresources.load_syntax()
       -- ==============
       TSError = { fg = xresources.red };
       TSPunctDelimitter = {};
-      TSPunctBracket = {};
+      TSPunctBracket = {fg = xresources.cyan};
       TSPunctSpecial = { fg = xresources.blue };
       TSConstant = { fg = xresources.cyan };
       TSConstBuiltin = { fg = xresources.cyan };
@@ -175,9 +175,9 @@ function xresources.load_syntax()
       TSTypeBuiltin= { fg = xresources.yellow };
       TSStructure= { fg = xresources.yellow };
       TSInclude= { fg = xresources.blue };
-      TSVariable= { fg = xresources.white };
+      TSVariable= {};
       TSVariableBuiltin= { fg = xresources.cyan };
-      TSText= { fg = xresources.white };
+      TSText= {};
       TSStrong= { fg = xresources.purple };
       TSEmphasis= { fg = xresources.cyan };
       TSUnderline= { fg = xresources.yellow };
@@ -302,7 +302,7 @@ function xresources.load_plugin_syntax()
       -- ==============
       -- JavaScript
       -- ==============
-      javaScriptBraces={fg = xresources.white };
+      javaScriptBraces={fg = xresources.yellow };
       javaScriptFunction ={ fg =xresources.purple };
       javaScriptIdentifier = { fg = xresources.purple };
       javaScriptNull = { fg = xresources.yellow };
