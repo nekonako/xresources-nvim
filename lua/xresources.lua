@@ -135,6 +135,58 @@ function xresources.load_syntax()
       Todo = {fg=xresources.purple};
       Underlined = {fg=xresources.none,style='underline'};
 
+      -- =============
+      -- Treesitter
+      -- ==============
+      TSError = { fg = xresources.red };
+      TSPunctDelimitter = {};
+      TSPunctBracket = {};
+      TSPunctSpecial = { fg = xresources.blue };
+      TSConstant = { fg = xresources.cyan };
+      TSConstBuiltin = { fg = xresources.cyan };
+      TSContMacro = { fg = xresources.purple };
+      TSString = { fg = xresources.green };
+      TSStringRegex = { fg = xresources.red };
+      TSCharacter = { fg = xresources.green };
+      TSNumber = { fg = xresources.yellow };
+      TSBoolean = { fg = xresources.yellow };
+      TSFloat = { fg = xresources.yellow };
+      TSAnnotation = { fg = xresources.blue };
+      TSAttribute = { fg = xresources.yellow };
+      TSNamespace = { fg = xresources.purple };
+      TSFunctionBuiltin = { fg = xresources.blue };
+      TSFunction = { fg = xresources.blue };
+      TSFuncMacro = { fg = xresources.blue };
+      TSParameter = { fg = xresources.red };
+      TSParameterReference = { fg = xresources.red };
+      TSMethod = { fg = xresources.yellow };
+      TSField = { fg = xresources.red };
+      TSProperty = { fg = xresources.red };
+      TSConstructor = { fg = xresources.cyan };
+      TSConditional= { fg = xresources.purple };
+      TSRepeat= { fg = xresources.purple };
+      TSLabel= { fg = xresources.purple };
+      TSKeyword= { fg = xresources.red };
+      TSKeywordFunction= { fg = xresources.cyan };
+      TSKeywordOperator= { fg = xresources.purple };
+      TSOperator= { fg = xresources.purple };
+      TSExeption= { fg = xresources.purple };
+      TSType= { fg = xresources.yellow };
+      TSTypeBuiltin= { fg = xresources.yellow };
+      TSStructure= { fg = xresources.yellow };
+      TSInclude= { fg = xresources.blue };
+      TSVariable= { fg = xresources.white };
+      TSVariableBuiltin= { fg = xresources.cyan };
+      TSText= { fg = xresources.white };
+      TSStrong= { fg = xresources.purple };
+      TSEmphasis= { fg = xresources.cyan };
+      TSUnderline= { fg = xresources.yellow };
+      TSTitle= { fg = xresources.yellow };
+      TSLiteral= { fg = xresources.green };
+      TSUri= { fg = xresources.green };
+      TSTag= {};
+      TSTagDelimitter= {};
+
       -- ===================
       -- Highlight Group
       -- ===================
@@ -308,16 +360,6 @@ function xresources.load_plugin_syntax()
       javascriptTemplateSB = { fg = xresources.red };
       javascriptVariable ={ fg = xresources.purple };
 
-      -- =============
-      -- TypeScript
-      -- ==============
-      TSFunction = {fg=xresources.cyan};
-      TSMethod = {fg=xresources.cyan};
-      TSKeywordFunction = {fg=xresources.red};
-      TSProperty = {fg=xresources.yellow};
-      TSType = {fg=xresources.cyan};
-      TSPunctcyan = {fg=xresources.cyan};
-
       -- ============
       -- Vim
       -- ============
@@ -331,7 +373,7 @@ function xresources.load_plugin_syntax()
       vimUserFunc = {fg=xresources.yellow};
       vimFuncName= {fg=xresources.yellow};
 
-      -- ========
+      -- =======
       -- Diff
       -- ========
       diffAdded = {fg = xresources.green};
