@@ -175,7 +175,7 @@ function xresources.load_syntax()
       TSTypeBuiltin= { fg = xresources.yellow };
       TSStructure= { fg = xresources.yellow };
       TSInclude= { fg = xresources.blue };
-      TSVariable= {};
+      TSVariable= {fg = xresources.white};
       TSVariableBuiltin= { fg = xresources.cyan };
       TSText= {};
       TSStrong= { fg = xresources.purple };
@@ -249,7 +249,7 @@ function xresources.load_syntax()
       WarningMsg = {fg=xresources.yellow,bg=xresources.none,style='bold'};
       Whitespace = {fg=xresources.grey};
       WildMenu = {fg=xresources.fg,bg=xresources.green};
-      Visual = {fg=xresources.bg,bg=xresources.fg};
+      Visual = {fg=xresources.none,bg=xresources.grey};
       VisualNOS = {fg=xresources.bg,bg=xresources.fg};
    }
    return syntax
@@ -433,8 +433,8 @@ function xresources.load_plugin_syntax()
       LspDiagnosticsSignHint = {fg=xresources.cyan};
       LspDiagnosticsVirtualTextError = {fg=xresources.red};
       LspDiagnosticsVirtualTextWarning= {fg=xresources.yellow};
-      LspDiagnosticsVirtualTextInformation = {fg=xresources.blue};
-      LspDiagnosticsVirtualTextHint = {fg=xresources.cyan};
+      LspDiagnosticsVirtualTextInformation = {fg=xresources.green};
+      LspDiagnosticsVirtualTextHint = {fg=xresources.yellow};
       LspDiagnosticsUnderlineError = {style="undercurl",sp=xresources.red};
       LspDiagnosticsUnderlineWarning = {style="undercurl",sp=xresources.yellow};
       LspDiagnosticsUnderlineInformation = {style="undercurl",sp=xresources.blue};
@@ -449,7 +449,7 @@ function xresources.load_plugin_syntax()
       NvimTreeFolderName = {fg=xresources.cyan};
       NvimTreeRootFolder = {fg=xresources.red};
       NvimTreeSpecialFile = {fg=xresources.fg,bg=xresources.none,stryle='NONE'};
-
+      NvimTreeFolderIcon = { fg = xresources.blue};
       -- ==================
       -- Telescope Nvim
       -- ==================
