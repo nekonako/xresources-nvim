@@ -222,7 +222,7 @@ function xresources.load_syntax()
       ModeMsg = {fg=xresources.fg,bg=xresources.none,style='bold'};
       MatchParen = {fg=xresources.red,bg=xresources.none};
       Normal = {fg = xresources.fg,bg=xresources.bg};
-      NormalFloat = {fg=xresources.grey,bg=xresources.grey};
+      NormalFloat = {fg=xresources.white,bg=xresources.grey};
       NonText = {fg=xresources.gray};
       Pmenu = {fg=xresources.fg,bg=xresources.grey};
       PmenuSel = {fg=xresources.grey,bg=xresources.blue};
