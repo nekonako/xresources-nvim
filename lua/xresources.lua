@@ -138,11 +138,11 @@ function xresources.load_syntax()
       -- Treesitter
       -- ==============
       TSError = { fg = xresources.red };
-      TSPunctDelimitter = {};
+      TSPunctDelimitter = { fg = xresources.cyan };
       TSPunctBracket = {fg = xresources.cyan};
-      TSPunctSpecial = { fg = xresources.blue };
-      TSConstant = { fg = xresources.cyan };
-      TSConstBuiltin = { fg = xresources.cyan };
+      TSPunctSpecial = { fg = xresources.cyan };
+      TSConstant = { fg = xresources.yellow };
+      TSConstBuiltin = { fg = xresources.blue };
       TSContMacro = { fg = xresources.purple };
       TSString = { fg = xresources.green };
       TSStringRegex = { fg = xresources.red };
@@ -152,28 +152,28 @@ function xresources.load_syntax()
       TSFloat = { fg = xresources.yellow };
       TSAnnotation = { fg = xresources.blue };
       TSAttribute = { fg = xresources.yellow };
-      TSNamespace = { fg = xresources.purple };
+      TSNamespace = { fg = xresources.blue };
       TSFunctionBuiltin = { fg = xresources.blue };
       TSFunction = { fg = xresources.blue };
       TSFuncMacro = { fg = xresources.blue };
-      TSParameter = { fg = xresources.red };
+      TSParameter = { fg = xresources.yellow };
       TSParameterReference = { fg = xresources.red };
       TSMethod = { fg = xresources.yellow };
-      TSField = { fg = xresources.red };
+      TSField = { fg = xresources.yellow };
       TSProperty = { fg = xresources.red };
       TSConstructor = { fg = xresources.cyan };
       TSConditional= { fg = xresources.purple };
       TSRepeat= { fg = xresources.purple };
       TSLabel= { fg = xresources.purple };
       TSKeyword= { fg = xresources.red };
-      TSKeywordFunction= { fg = xresources.cyan };
+      TSKeywordFunction= { fg = xresources.red };
       TSKeywordOperator= { fg = xresources.purple };
       TSOperator= { fg = xresources.purple };
-      TSExeption= { fg = xresources.purple };
+      TSExeption= { fg = xresources.red };
       TSType= { fg = xresources.yellow };
       TSTypeBuiltin= { fg = xresources.yellow };
       TSStructure= { fg = xresources.yellow };
-      TSInclude= { fg = xresources.blue };
+      TSInclude= { fg = xresources.red };
       TSVariable= {fg = xresources.fg};
       TSVariableBuiltin= { fg = xresources.cyan };
       TSText= {};
@@ -221,7 +221,7 @@ function xresources.load_syntax()
       ModeMsg = {fg=xresources.fg,bg=xresources.none,style='bold'};
       MatchParen = {fg=xresources.red,bg=xresources.none};
       Normal = {fg = xresources.fg,bg=xresources.bg};
-      NormalFloat = {fg=xresources.white,bg=xresources.grey};
+      NormalFloat = {fg=xresources.fg,bg=xresources.grey};
       NonText = {fg=xresources.grey};
       Pmenu = {fg=xresources.fg,bg=xresources.grey};
       PmenuSel = {fg=xresources.grey,bg=xresources.blue};
@@ -259,13 +259,12 @@ end
 -- ================================
 function xresources.load_plugin_syntax()
    local plugin_syntax = {
-
       -- ================
       -- CSS
       -- ================
       cssAttrComma= {fg=xresources.purple};
       cssAttributeSelector= {fg=xresources.green};
-      cssBraces= {fg=xresources.white};
+      cssBraces= {fg=xresources.fg};
       cssClassName= {fg=xresources.yellow};
       cssClassNameDot= {fg=xresources.yellow};
       cssDefinition= {fg=xresources.purple};
@@ -274,15 +273,14 @@ function xresources.load_plugin_syntax()
       cssFunctionName= {fg=xresources.blue};
       cssIdentifier= {fg=xresources.blue};
       cssImportant= {fg=xresources.purple};
-      cssInclude= {fg=xresources.white};
+      cssInclude= {fg=xresources.fg};
       cssIncludeKeyword= {fg=xresources.purple};
       cssMediaType= {fg=xresources.yellow};
-      cssProp= {fg=xresources.white};
+      cssProp= {fg=xresources.fg};
       cssPseudoClassId= {fg=xresources.yellow};
       cssSelectorOp= {fg=xresources.purple};
       cssSelectorOp2= {fg=xresources.purple};
       cssTagName= {fg=xresources.red};
-
       -- ================
       -- GO
       -- =================
@@ -297,7 +295,6 @@ function xresources.load_plugin_syntax()
       goTypeName= {fg=xresources.yellow};
       goDeclType= {fg=xresources.cyan};
       goTypeDecl= {fg=xresources.purple};
-
       -- ==============
       -- JavaScript
       -- ==============
@@ -309,7 +306,7 @@ function xresources.load_plugin_syntax()
       javaScriptRequire ={ fg =xresources.cyan };
       javaScriptReserved = { fg = xresources.purple };
       -- ==============================================
-      -- https://github.com/pangloss/vim-javascript
+      -- vim-javascript
       -- ==============================================
       jsArrowFunction = { fg = xresources.purple };
       jsClassKeyword ={ fg = xresources.purple };
@@ -337,28 +334,27 @@ function xresources.load_plugin_syntax()
       jsThis = { fg = xresources.red };
       jsUndefined = { fg = xresources.yellow };
       -- =====================================
-      --  https://github.com/othree/yajs.vim
-      --  =======================================
+      --  yajs.vim
+      -- =====================================
       javascriptArrowFunc ={ fg = xresources.purple };
       javascriptClassExtends = { fg = xresources.purple };
       javascriptClassKeyword ={ fg = xresources.purple };
       javascriptDocNotation ={ fg = xresources.purple };
       javascriptDocParamName = { fg = xresources.blue };
       javascriptDocTags ={ fg = xresources.purple };
-      javascriptEndColons = { fg = xresources.white };
+      javascriptEndColons = { fg = xresources.fg};
       javascriptExport ={ fg = xresources.purple };
-      javascriptFuncArg ={ fg = xresources.white };
+      javascriptFuncArg ={ fg = xresources.fg };
       javascriptFuncKeyword ={ fg = xresources.purple };
       javascriptIdentifier ={ fg = xresources.red };
       javascriptImport ={ fg = xresources.purple };
-      javascriptMethodName ={ fg =xresources.white };
-      javascriptObjectLabel = { fg =xresources.white };
+      javascriptMethodName ={ fg =xresources.fg };
+      javascriptObjectLabel = { fg =xresources.fg };
       javascriptOpSymbol= { fg =xresources.cyan};
-      javascriptOpSymbols ={ fg = xresources.syan };
+      javascriptOpSymbols ={ fg = xresources.cyan };
       javascriptPropertyName = { fg = xresources.green };
       javascriptTemplateSB = { fg = xresources.red };
       javascriptVariable ={ fg = xresources.purple };
-
       -- ============
       -- Vim
       -- ============
@@ -371,7 +367,15 @@ function xresources.load_plugin_syntax()
       vimNotFunc = {fg=xresources.purple};
       vimUserFunc = {fg=xresources.yellow};
       vimFuncName= {fg=xresources.yellow};
-
+      -- =================
+      -- Git stuff
+      -- ===================
+      -- Vim GitGutter
+      -- ==================
+      GitGutterAdd = {fg=xresources.green};
+      GitGutterChange = {fg=xresources.blue};
+      GitGutterDelete = {fg=xresources.red};
+      GitGutterChangeDelete = {fg=xresources.purple};
       -- =======
       -- Diff
       -- ========
@@ -380,10 +384,12 @@ function xresources.load_plugin_syntax()
       diffChanged = {fg = xresources.blue};
       diffOldFile = {fg = xresources.yellow};
       diffNewFile = {fg = xresources.yellow};
-      diffFile    = {fg = xresources.aqua};
+      diffFile    = {fg = xresources.cyan};
       diffLine    = {fg = xresources.grey};
       diffIndexLine = {fg = xresources.purple};
-
+      -- ========
+      -- Commit
+      -- ========
       gitcommitSummary = {fg = xresources.red};
       gitcommitUntracked = {fg = xresources.grey};
       gitcommitDiscarded = {fg = xresources.grey};
@@ -392,7 +398,9 @@ function xresources.load_plugin_syntax()
       gitcommitOnBranch = { fg=xresources.grey};
       gitcommitArrow  = {fg = xresources.grey};
       gitcommitFile  = {fg = xresources.green};
-
+      --- ===========================================
+      -- vista.vim
+      -- =============================================
       Vistacyan = {fg=xresources.grey};
       VistaChildrenNr = {fg=xresources.yellow};
       VistaKind = {fg=xresources.purple};
@@ -403,26 +411,23 @@ function xresources.load_plugin_syntax()
       VistaColon = {fg=xresources.purple};
       VistaIcon = {fg=xresources.yellow};
       VistaLineNr = {fg=xresources.fg};
-
-      -- ===================
-      -- Vim GitGutter
-      -- ==================
-      GitGutterAdd = {fg=xresources.green};
-      GitGutterChange = {fg=xresources.blue};
-      GitGutterDelete = {fg=xresources.red};
-      GitGutterChangeDelete = {fg=xresources.purple};
-
+      -- ===========
+      -- vim-signify
+      -- ===========
       SignifySignAdd = {fg=xresources.green};
       SignifySignChange = {fg=xresources.blue};
       SignifySignDelete = {fg=xresources.red};
-
+      -- ==============
+      -- vim-dadbod-ui
+      -- ==============
       dbui_tables = {fg=xresources.blue};
-
+      -- =================
+      -- dashboard-nvim
+      -- =================
       DashboardShortCut = {fg=xresources.purple};
       DashboardHeader = {fg=xresources.yellow};
       DashboardCenter = {fg=xresources.blue};
       DashboardFooter = {fg=xresources.grey};
-
       -- =========================
       -- Neovim LSP
       -- =========================
@@ -438,10 +443,11 @@ function xresources.load_plugin_syntax()
       LspDiagnosticsUnderlineWarning = {style="undercurl",sp=xresources.yellow};
       LspDiagnosticsUnderlineInformation = {style="undercurl",sp=xresources.blue};
       LspDiagnosticsUnderlineHint = {style="undercurl",sp=xresources.cyan};
-
+      -- ===============
+      -- vim-cursorword
+      -- ===============
       CursorWord0 = {bg=xresources.grey};
       CursorWord1 = {bg=xresources.grey};
-
       -- ==================
       -- Nvim Tree
       -- ==================
