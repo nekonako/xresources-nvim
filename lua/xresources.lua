@@ -23,8 +23,7 @@ end
 -- funtion to get darker color
 -- ======================================
 local function get_darker_color(c, hex)
-   local command = io.popen("xrdb -query | grep " .. c .. " -m 1 | cut -f 2")
-   local before_color = command:read("*l")
+   local before_color = get_xresources_color(c)
    local t = tostring(before_color)
    local s = string.sub(t, 2, 7)
    local after_color = tonumber('0x' .. s) - hex
@@ -54,8 +53,8 @@ local xresources = {
    light_purple = get_xresources_color('color13');
    ligt_cyan = get_xresources_color('color14');
    light_white = get_xresources_color('color15');
-   grey = get_lighter_color('background', 0xf0f10);
-   grey1 = get_lighter_color('background', 0x363940);
+   grey = vim.o.background == 'light' and get_darker_color('background', 0xf0f10) or get_lighter_color('background', 0xf0f10);
+   grey1 = vim.o.background == 'light' and get_darker_color('background', 0x363940) or get_lighter_color('background', 0x363940);
    none = 'NONE';
 }
 
@@ -475,7 +474,6 @@ function xresources.colorscheme()
    if vim.fn.exists('syntax_on') then
       vim.api.nvim_command('syntax reset')
    end
-   vim.o.background = 'dark'
    vim.o.termguicolors = true
    vim.g.colors_name = 'xresources'
    local syntax = xresources.load_syntax()
