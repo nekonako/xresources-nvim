@@ -21,11 +21,11 @@ or
 ### Notes
 if you use light colorscheme, set neovim background to light.
 
-`lua vim.o.background = 'light'`````````
+`lua vim.o.background = 'light'`
 
 or
 
-``set background=light``````````
+`set background=light`
 
 ### Preview
 
