@@ -174,7 +174,7 @@ function xresources.load_syntax()
       TSTypeBuiltin= { fg = xresources.yellow };
       TSStructure= { fg = xresources.yellow };
       TSInclude= { fg = xresources.blue };
-      TSVariable= {fg = xresources.white};
+      TSVariable= {fg = xresources.fg};
       TSVariableBuiltin= { fg = xresources.cyan };
       TSText= {};
       TSStrong= { fg = xresources.purple };
@@ -208,21 +208,21 @@ function xresources.load_syntax()
       DiffChange = {fg=xresources.bg,bg=xresources.yellow};
       DiffDelete = {fg=xresources.bg,bg=xresources.red};
       DiffText = {fg=xresources.bg,bg=xresources.fg};
-      Directory = {fg=xresources.gray,bg=xresources.none};
+      Directory = {fg=xresources.grey,bg=xresources.none};
       debugBreakpoint = {fg=xresources.bg,bg=xresources.red};
       EndOfBuffer = {fg=xresources.bg,bg=xresources.none};
       ErrorMsg = {fg=xresources.red,bg=xresources.none,style='bold'};
       FoldColumn = {fg=xresources.fg,bg=xresources.bg};
       Folded = {fg=xresources.grey,bg=xresources.grey};
       iCursor = {fg=xresources.none,bg=xresources.none,style='reverse'};
-      IncSearch = {fg=xresources.gray,bg=xresources.yellow,style=xresources.none};
+      IncSearch = {fg=xresources.grey,bg=xresources.yellow,style=xresources.none};
       lCursor = {fg=xresources.none,bg=xresources.none,style='reverse'};
       LineNr = {fg=xresources.grey1};
       ModeMsg = {fg=xresources.fg,bg=xresources.none,style='bold'};
       MatchParen = {fg=xresources.red,bg=xresources.none};
       Normal = {fg = xresources.fg,bg=xresources.bg};
       NormalFloat = {fg=xresources.white,bg=xresources.grey};
-      NonText = {fg=xresources.gray};
+      NonText = {fg=xresources.grey};
       Pmenu = {fg=xresources.fg,bg=xresources.grey};
       PmenuSel = {fg=xresources.grey,bg=xresources.blue};
       PmenuSelBold = {fg=xresources.grey,g=xresources.blue};
@@ -238,7 +238,7 @@ function xresources.load_syntax()
       SpellRare = {fg=xresources.purple,bg=xresources.none,style = 'undercurl'};
       SignColumn = {fg=xresources.fg,bg=xresources.bg};
       Search = {fg=xresources.bg,bg=xresources.yellow};
-      SpecialKey = {fg=xresources.gray};
+      SpecialKey = {fg=xresources.grey};
       TabLineSel = {bg=xresources.bg};
       Title = {fg=xresources.green,style='bold'};
       Terminal = {fg = xresources.fg,bg=xresources.bg};
@@ -439,8 +439,8 @@ function xresources.load_plugin_syntax()
       LspDiagnosticsUnderlineInformation = {style="undercurl",sp=xresources.blue};
       LspDiagnosticsUnderlineHint = {style="undercurl",sp=xresources.cyan};
 
-      CursorWord0 = {bg=xresources.gray};
-      CursorWord1 = {bg=xresources.gray};
+      CursorWord0 = {bg=xresources.grey};
+      CursorWord1 = {bg=xresources.grey};
 
       -- ==================
       -- Nvim Tree
