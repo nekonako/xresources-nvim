@@ -156,25 +156,25 @@ function xresources.load_syntax()
       TSFunctionBuiltin = { fg = xresources.blue };
       TSFunction = { fg = xresources.blue };
       TSFuncMacro = { fg = xresources.blue };
-      TSParameter = { fg = xresources.yellow };
+      TSParameter = { fg = xresources.red };
       TSParameterReference = { fg = xresources.red };
-      TSMethod = { fg = xresources.yellow };
+      TSMethod = { fg = xresources.red };
       TSField = { fg = xresources.yellow };
       TSProperty = { fg = xresources.red };
       TSConstructor = { fg = xresources.cyan };
       TSConditional= { fg = xresources.purple };
       TSRepeat= { fg = xresources.purple };
       TSLabel= { fg = xresources.purple };
-      TSKeyword= { fg = xresources.red };
-      TSKeywordFunction= { fg = xresources.red };
-      TSKeywordOperator= { fg = xresources.purple };
-      TSOperator= { fg = xresources.purple };
+      TSKeyword= { fg = xresources.purple };
+      TSKeywordFunction= { fg = xresources.purple };
+      TSKeywordOperator= { fg = xresources.cyan };
+      TSOperator= { fg = xresources.cyan };
       TSExeption= { fg = xresources.red };
-      TSType= { fg = xresources.yellow };
-      TSTypeBuiltin= { fg = xresources.yellow };
+      TSType= { fg = xresources.red };
+      TSTypeBuiltin= { fg = xresources.red };
       TSStructure= { fg = xresources.yellow };
       TSInclude= { fg = xresources.red };
-      TSVariable= {fg = xresources.fg};
+      TSVariable= {};
       TSVariableBuiltin= { fg = xresources.cyan };
       TSText= {};
       TSStrong= { fg = xresources.purple };
@@ -431,6 +431,10 @@ function xresources.load_plugin_syntax()
       -- =========================
       -- Neovim LSP
       -- =========================
+      LspDiagnosticsError = { fg = xresources.red };
+      LspDiagnosticsWarning = { fg = xresources.yellow };
+      LspDiagnosticsInformation = { fg = xresources.green };
+      LspDiagnosticsHint = { fg = xresources.cyan };
       LspDiagnosticsSignError = {fg=xresources.red};
       LspDiagnosticsSignWarning = {fg=xresources.yellow};
       LspDiagnosticsSignInformation = {fg=xresources.blue};
@@ -438,10 +442,10 @@ function xresources.load_plugin_syntax()
       LspDiagnosticsVirtualTextError = {fg=xresources.red};
       LspDiagnosticsVirtualTextWarning= {fg=xresources.yellow};
       LspDiagnosticsVirtualTextInformation = {fg=xresources.green};
-      LspDiagnosticsVirtualTextHint = {fg=xresources.yellow};
+      LspDiagnosticsVirtualTextHint = {fg=xresources.cyan};
       LspDiagnosticsUnderlineError = {style="undercurl",sp=xresources.red};
       LspDiagnosticsUnderlineWarning = {style="undercurl",sp=xresources.yellow};
-      LspDiagnosticsUnderlineInformation = {style="undercurl",sp=xresources.blue};
+      LspDiagnosticsUnderlineInformation = {style="undercurl",sp=xresources.green};
       LspDiagnosticsUnderlineHint = {style="undercurl",sp=xresources.cyan};
       -- ===============
       -- vim-cursorword
@@ -451,7 +455,7 @@ function xresources.load_plugin_syntax()
       -- ==================
       -- Nvim Tree
       -- ==================
-      NvimTreeFolderName = {fg=xresources.cyan};
+      NvimTreeFolderName = {fg=xresources.blue};
       NvimTreeRootFolder = {fg=xresources.red};
       NvimTreeSpecialFile = {fg=xresources.fg,bg=xresources.none,stryle='NONE'};
       NvimTreeFolderIcon = { fg = xresources.blue};
