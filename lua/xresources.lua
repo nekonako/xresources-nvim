@@ -139,7 +139,7 @@ function xresources.load_syntax()
       -- ==============
       TSError = { fg = xresources.red };
       TSPunctDelimitter = { fg = xresources.cyan };
-      TSPunctBracket = {fg = xresources.cyan};
+      TSPunctBracket = {};
       TSPunctSpecial = { fg = xresources.cyan };
       TSConstant = { fg = xresources.yellow };
       TSConstBuiltin = { fg = xresources.blue };
@@ -158,10 +158,10 @@ function xresources.load_syntax()
       TSFuncMacro = { fg = xresources.blue };
       TSParameter = { fg = xresources.red };
       TSParameterReference = { fg = xresources.red };
-      TSMethod = { fg = xresources.red };
+      TSMethod = { fg = xresources.blue };
       TSField = { fg = xresources.yellow };
       TSProperty = { fg = xresources.red };
-      TSConstructor = { fg = xresources.cyan };
+      TSConstructor = { fg = xresources.blue };
       TSConditional= { fg = xresources.purple };
       TSRepeat= { fg = xresources.purple };
       TSLabel= { fg = xresources.purple };
@@ -170,12 +170,12 @@ function xresources.load_syntax()
       TSKeywordOperator= { fg = xresources.cyan };
       TSOperator= { fg = xresources.cyan };
       TSExeption= { fg = xresources.red };
-      TSType= { fg = xresources.red };
+      TSType= { fg = xresources.blue };
       TSTypeBuiltin= { fg = xresources.red };
       TSStructure= { fg = xresources.yellow };
       TSInclude= { fg = xresources.red };
-      TSVariable= {};
-      TSVariableBuiltin= { fg = xresources.cyan };
+      TSVariable= {fg= xresources.yellow};
+      TSVariableBuiltin= { fg = xresources.blue };
       TSText= {};
       TSStrong= { fg = xresources.purple };
       TSEmphasis= { fg = xresources.cyan };
