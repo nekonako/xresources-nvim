@@ -51,7 +51,7 @@ local xresources = {
    light_yellow = get_xresources_color('color11');
    light_blue = get_xresources_color('color12');
    light_purple = get_xresources_color('color13');
-   ligt_cyan = get_xresources_color('color14');
+   light_cyan = get_xresources_color('color14');
    light_white = get_xresources_color('color15');
    grey = vim.o.background == 'light' and get_darker_color('background', 0xf0f10) or get_lighter_color('background', 0xf0f10);
    grey1 = vim.o.background == 'light' and get_darker_color('background', 0x363940) or get_lighter_color('background', 0x363940);
