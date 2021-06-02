@@ -455,6 +455,8 @@ function xresources.load_plugin_syntax()
       -- ==================
       -- Nvim Tree
       -- ==================
+      NvimTreeEmptyFolderName = {fg=xresources.blue};
+      NvimTreeOpenedFolderName= {fg=xresources.blue};
       NvimTreeFolderName = {fg=xresources.blue};
       NvimTreeRootFolder = {fg=xresources.red};
       NvimTreeSpecialFile = {fg=xresources.fg,bg=xresources.none,stryle='NONE'};
