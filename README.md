@@ -19,7 +19,7 @@ or
 `colorscheme xresources`
 
 ### Notes
-if you use light colorscheme, set neovim background to light.
+if you use light background, set neovim background to light.
 
 `lua vim.o.background = 'light'`
 
