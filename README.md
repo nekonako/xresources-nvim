@@ -15,6 +15,10 @@ Plug 'nekonako/xresources-nvim'
 
 - lua
 
+`require('xresources')`
+
+- lua inside vimscript
+
 `lua require('xresources')`
 
 - vimscript
@@ -25,6 +29,10 @@ Plug 'nekonako/xresources-nvim'
 if you use light background, set neovim background to light.
 
 - lua
+
+`vim.o.background = 'light'`
+
+- lua inside vimscript
 
 `lua vim.o.background = 'light'`
 
