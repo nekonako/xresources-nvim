@@ -1,7 +1,10 @@
 <h2 align="center">Xresources-nvim</h2>
+
+<b align="center">
 <center>
-<b>Neovim colorscheme based on your xresources color</b>
+Neovim colorscheme based on your xresources color
 </center>
+</b>
 
 <br/>
 <center>
@@ -108,7 +111,7 @@ section.left[1] = {
 - font is pragmataPro
 
 #### Thanks
-- [Glepnir](https://github.com/glepnir) - For colorscheme boilerplate
+- [Glepnir](https://github.com/glepnir) 
 - [Elianiva](https://github.com/elianiva)
 - [Dotfiles indonesia](https://t.me/dotfiles_id)
 - [Vim indonesia](https://t.me/VimID)
