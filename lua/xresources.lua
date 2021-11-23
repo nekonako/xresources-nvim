@@ -455,12 +455,14 @@ function xresources.load_plugin_syntax()
       -- ==================
       -- Nvim Tree
       -- ==================
-      NvimTreeEmptyFolderName = {fg=xresources.blue};
-      NvimTreeOpenedFolderName= {fg=xresources.blue};
-      NvimTreeFolderName = {fg=xresources.blue};
-      NvimTreeRootFolder = {fg=xresources.red};
+      NvimTreeEmptyFolderName = {fg=xresources.cyan};
+      NvimTreeOpenedFolderName= {fg=xresources.cyan};
+      NvimTreeFolderName = {fg=xresources.cyan};
+      NvimTreeExecFile = {stye='NONE'},
+      NvimTreeGitDirty = {fg=xresources.yellow},
+      --NvimTreeRootFolder = {fg=xresources.red};
       NvimTreeSpecialFile = {fg=xresources.fg,bg=xresources.none,stryle='NONE'};
-      NvimTreeFolderIcon = { fg = xresources.blue};
+      NvimTreeFolderIcon = { fg = xresources.yellow};
       -- ==================
       -- Telescope Nvim
       -- ==================
