@@ -1,17 +1,25 @@
-# Xresources-nvim
-Neovim colorscheme based on your xresources color
+<h2 align="center">Xresources-nvim</h2>
+<center>
+<b>Neovim colorscheme based on your xresources color</b>
+</center>
 
-### Require
+<br/>
+<center>
+<img src="./shot.png" width="80%"/>
+</center>
+
+
+#### Require
 - Neovim 0.5
 - xrdb
 
-### Install
+#### Install
 **Vim Plug**
 ```vim
 Plug 'nekonako/xresources-nvim'
 ```
 
-### Usage
+#### Usage
 
 - lua
 
@@ -25,7 +33,7 @@ Plug 'nekonako/xresources-nvim'
 
 `colorscheme xresources`
 
-### Notes
+#### Notes
 if you use light background, set neovim background to light.
 
 - lua
@@ -40,15 +48,7 @@ if you use light background, set neovim background to light.
 
 `set background=light`
 
-### Preview
-
-<center>
-
-!['Preview'](./shot.png)
-
-</center>
-
-### Properties
+#### Properties
 
 | **Properties** | **Xresources**           |
 | :----------: | :--------------------: |
@@ -74,7 +74,7 @@ if you use light background, set neovim background to light.
 | grey1        | background + 0x363940  |
 | none         | NONE                   |
 
-### Example using properties
+#### Example using properties
 
 Let say i want using xresources to my [galaxyline](https://github.com/glepnir/galaxyline.nvim) 
 configuration 
@@ -96,13 +96,18 @@ section.left[1] = {
 }
 ```
 
-### Tips
+#### Tips
 - use [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better highlight
 
-### Similiar project
+#### Similiar project
 - [wal.vim](https://github.com/dylanaraps/wal.vim)
 
-### Thanks
+#### My setup
+- my xresources color is originaly from [uwu.vim](https://github.com/Mangeshrex/uwu.vim)
+- my terminal is using alacritty
+- font is pragmataPro
+
+#### Thanks
 - [Glepnir](https://github.com/glepnir) - For colorscheme boilerplate
 - [Elianiva](https://github.com/elianiva)
 - [Dotfiles indonesia](https://t.me/dotfiles_id)
