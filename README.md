@@ -1,16 +1,16 @@
 <h2 align="center">Xresources-nvim</h2>
 
-<b align="center">
-<center>
-Neovim colorscheme based on your xresources color
-</center>
+<p align="center">
+<b>
+* Neovim colorscheme based on your xresources color *
 </b>
+</p>
 
 <br/>
-<center>
+<p align="center">
 <img src="./shot.png" width="80%"/>
-</center>
-
+</p>
+<br/>
 
 #### Require
 - Neovim 0.5
