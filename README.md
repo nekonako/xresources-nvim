@@ -8,7 +8,7 @@
 
 <br/>
 <p align="center">
-<img src="./shot.png" width="80%"/>
+<img src="./shot.png" width="90%"/>
 </p>
 <br/>
 
